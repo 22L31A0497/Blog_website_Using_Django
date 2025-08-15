@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from .models import Blog,Blog1
 # Create your views here.
 from datetime import datetime
+from django.core.management import call_command
 
 # def home(request):
 #     return HttpResponse("This is my first app")
@@ -46,3 +47,9 @@ def delete_blog(request, pk):
     if request.method == 'POST':
         blog.delete()
         return redirect('blogvideo')  # your listing page
+# demoapp/views.py
+
+
+def run_migrations(request):
+    call_command('migrate')
+    return HttpResponse("Migrations completed!")

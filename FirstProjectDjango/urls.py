@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from .views import home,demo,jagan
+from demoapp.views import run_migrations
 # from demoapp.views import home
 # from demoapp.views import fapp
 from django.conf.urls.static import static
@@ -36,6 +37,7 @@ urlpatterns = [
     path("blog",blogpage,name="blog"),
     path("blogvideo",blogVideo,name="blogvideo"),
     path('delete_blog/<int:pk>/', delete_blog, name='delete_blog'),
+    path('run-migrations/', run_migrations),
 
 ]
 
