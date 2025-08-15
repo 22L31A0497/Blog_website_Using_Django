@@ -51,5 +51,8 @@ def delete_blog(request, pk):
 
 
 def run_migrations(request):
-    call_command('migrate')
-    return HttpResponse("Migrations completed!")
+    if request.method == "GET":
+        from django.core.management import call_command
+        call_command('migrate')
+        return HttpResponse("Migrations completed!")
+    return HttpResponse("Use GET request only")
