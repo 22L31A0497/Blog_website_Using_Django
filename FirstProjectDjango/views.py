@@ -11,7 +11,7 @@ def demo(request):
 
 
 def home(request):
-    return render(request, 'base.html')
+    return render(request, 'index.html')
 
 def jagan(request):
     return render(request,'base.html',{"name":"jagan","age":"21"})
